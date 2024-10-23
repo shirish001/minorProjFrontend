@@ -1,0 +1,91 @@
+@import "../../responsive.scss";
+
+.searchBar {
+  .type {
+    button {
+      padding: 16px 36px;
+      border: 1px solid #999;
+      border-bottom: none;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
+
+      &.active {
+        background-color: black;
+        color: white;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+      }
+    }
+  }
+
+  form {
+    border: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    gap: 5px;
+
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+
+    input {
+      border: none;
+      padding: 0px 10px;
+      width: 200px;
+
+      // for lg screens we reduce size of ip btn 2 and 3
+      @include lg {
+        padding: 0px 5px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+      }
+      @include md {
+        width: 200px; // first ip element
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 200px;
+        }
+      }
+
+      @include sm {
+        width: auto; // take entire width available
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: auto;
+        }
+        padding: 20px; // padding given to i/p elements
+        border: 1px solid #999;
+      }
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: #fece51;
+      //after the items take their determined or deafult space...
+      flex: 1; // take the remaining space in flex container
+
+      @include sm {
+        padding: 10px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../responsive.scss";
+
+.listPage {
+  display: flex;
+  height: 100%;
+
+  .listContainer {
+    flex: 3;
+    height: 100%;
+
+    .wrapper {
+      height: 100%;
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      //If the content inside .wrapper (e.g.images) exceeds the height of .wrapper, the overflow-y: scroll
+      // ensures that the extra content will not spill outside of the .wrapper's boundaries.
+      // Instead, a scrollbar will appear on the right, allowing users to scroll through the overflowed content.
+      overflow-y: scroll;
+      padding-bottom: 50px;
+    }
+  }
+  .mapContainer {
+    flex: 2;
+    height: 100%;
+    background-color: #fcf5f3;
+
+    @include md {
+      display: none;
+    }
+  }
+}

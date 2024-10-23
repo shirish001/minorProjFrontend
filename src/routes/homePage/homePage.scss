@@ -1,0 +1,80 @@
+@import "../../responsive.scss";
+.homePage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      // to prevent the clash of popped out image from left and right side of text on the homepage
+      //if container was used for padding then it would shift the imgContainer
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      justify-content: center;
+      height: 100%; //to make justify-content use the full screen to center it
+
+      @include md {
+        padding: 0; // since we removed the img we dont need padding
+      }
+
+      @include sm {
+        justify-content: flex-start; // put the wrapper on top and not center
+      }
+
+      .title {
+        // for extra large default winodws
+        font-size: 64px;
+
+        @include lg {
+          font-size: 48px; // dec the font size for lg windows
+        }
+      }
+
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+
+        @include sm {
+          display: none;
+        }
+        h1 {
+          font-size: 36px;
+          @include lg {
+            font-size: 30px; // dec the font size for lg windows
+          }
+        }
+        h2 {
+          font-size: 20px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+  .imgContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include md {
+      //hides the entire .imgContainer when the conditions specified in the md media query are met.
+      display: none; // it won't be visible or take up space.
+    }
+
+    img {
+      width: 110%; //to get picture out of frame a bit
+      // now the picture moves to right by default but we want the left to move out of frame
+      // hence we do this
+      position: absolute;
+      right: 0;
+
+      @include lg {
+        width: 100%; // dec the image size for larger windows
+      }
+    }
+  }
+}
