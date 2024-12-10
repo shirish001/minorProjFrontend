@@ -19,7 +19,7 @@ function App() {
           <Route path="/:id" element={<SinglePage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />{" "}
+          {/* <Route path="/register" element={<Register />} />{" "} */}
           {/* Uncomment if Register page is included */}
         </Routes>
       </Layout>
