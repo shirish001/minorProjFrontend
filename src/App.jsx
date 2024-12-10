@@ -5,7 +5,7 @@ import Layout from "./routes/layout/layout";
 import SinglePage from "./routes/singlePage/singlePage";
 import ProfilePage from "./routes/profilePage/profilePage";
 import Login from "./routes/login/login";
-import Register from "./routes/register/register"; // Uncomment if Register page is needed
+// git ac;import Register from "./routes/register/register"; // Uncomment if Register page is needed
 
 function App() {
   return (
